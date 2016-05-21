@@ -20,6 +20,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Moony - North Emisphere</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<style>
@@ -31,8 +32,8 @@
 		.moon{
 			z-index: 5;
 			position: absolute;
-			top: 0px;
-			/*left: 14px;*/
+			top: 1px;
+			left: 13px;
 			/*padding-left: 6px;*/
 			float:left;
 			filter: opacity(.3) brightness(.8) contrast(1.4);
@@ -62,7 +63,7 @@
 			<div class="col-md-4">
 				<canvas width="300" height="300" id="moon"></canvas>
 				<div class="moon">
-					<img src="img/moon.png" alt="">
+					<img src="img/moon2.png" alt="">
 				</div>
 			</div>
 			<div class="col-md-8">
