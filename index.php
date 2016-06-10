@@ -22,6 +22,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Moony - North Emisphere</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<style>
 		body{
@@ -36,6 +38,7 @@
 			left: 13px;
 			/*padding-left: 6px;*/
 			float:left;
+			-webkit-filter: opacity(.3) brightness(.8) contrast(1.4);
 			filter: opacity(.3) brightness(.8) contrast(1.4);
 			width: 300px;
 			height: 300px;
@@ -73,6 +76,11 @@
 						Moony
 					</div>
 						<ul class="list-group">
+							<? if(!is_null($m->phase)){  ?>
+								<li class="list-group-item">
+									Phase: <?= $m->phase ?>
+								</li>
+							<? } ?>
 							<li class="list-group-item">
 								Illumination: <?= $m->illumination ?> %
 							</li>
@@ -128,7 +136,7 @@
 			// Start from the top center
 			ctx.moveTo(150,30);
 
-			if( moonAge > 14 ){ //waning moon
+			if( moonAge < 14 ){ //waning moon
 
 				ctx.bezierCurveTo(310,30,310,270,150,270);
 				ctx.bezierCurveTo(300-xPos,270,300-xPos,30,150,30);
